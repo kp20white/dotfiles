@@ -1,0 +1,66 @@
+#
+# Kyle's screenrc
+#
+
+# default scroll back set to huge!
+defscrollback 50000
+
+#show me my windows in all their green goodness.
+#hardstatus alwayslastline "%{.bW}%-wL%{.rW}%n %t%{-}%+Lw %=%{..G} %H %{..Y} %m/%d %C%a "
+hardstatus alwayslastline "%{.bW}%-Lw%{.rW}%n %t%{-}%+Lw %=%{..G} %H %{..Y} %m/%d %C%a "
+#hardstatus alwayslastline "%{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw %= %{mk}@ %H %{ck}%Y%{wk}-%{ck}%m%{wk}-%{ck}%d %{yk}%D %{gk}%c"
+#hardstatus alwayslastline "%{-b gk}%-w%{+b kg}%50>%n %t%{-b gk}%+w%<"
+#seldom used red goodness.
+#hardstatus alwayslastline "%{-b rk}%-w%{+b kr}%50>%n %t%{-b rk}%+w%<"
+#
+
+#funny messages are good.
+nethack on
+# we don't need not stinkin beeps.
+vbell off
+# I am watching you.
+# defmonitor on
+#stuff
+#bindkey -k k1 select 1
+#bindkey -k k2 select 2
+#bindkey -k k3 select 3
+#bindkey -k k4 select 4
+#bindkey -k k5 select 5
+#bindkey -k k6 select 6
+#bindkey -k k7 select 7
+#bindkey -k k8 select 8
+#bindkey -k k9 select 9
+# I will let you know when I need you.
+defsilence off
+# Is something up?
+activity 'Something is up in window %t %n'
+# put in to make password happy.
+screen -t local  0
+#screen -t <virtual_term_name> ssh <hostname>
+
+chdir $WEB_HOME/rsp
+screen -t rsp 
+chdir $WEB_HOME/campo
+screen -t campo
+screen -t campo
+screen -t campo
+screen -t campo
+chdir $WEB_HOME/snow
+screen -t snow 
+screen -t snow 
+chdir $HOME
+
+#make things a little more secure.
+password
+
+#bindings
+bind = resize =
+bind + resize +3
+bind - resize -3
+
+
+# Set the default terminal emulation to 'xterm'
+term rxvt
+
+
+

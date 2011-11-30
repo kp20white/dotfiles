@@ -131,10 +131,10 @@ match OverLength /\%81v.\+/
   set showcmd
   set showmatch
   set autoindent
-  set softtabstop=2
+  set softtabstop=4
   set expandtab
-  set tabstop=2
-  set shiftwidth=2
+  set tabstop=4
+  set shiftwidth=4
   set undolevels=500
   set showtabline=18
   set showmode
@@ -157,15 +157,15 @@ match OverLength /\%81v.\+/
     map ,r3 :set transp=20<CR>
 
   " Select tabs with command+#, just like in iTerm, Firefox, Chrome, etc. <3 -- Thanks, Richtaur! -- not working --
-    map <D-1> 1gt
-    map <D-2> 2gt
-    map <D-3> 3gt
-    map <D-4> 4gt
-    map <D-5> 5gt
-    map <D-6> 6gt
-    map <D-7> 7gt
-    map <D-8> 8gt
-    map <D-9> 9gt
+  " map <D-1> 1gt
+  " map <D-2> 2gt
+  " map <D-3> 3gt
+  " map <D-4> 4gt
+  " map <D-5> 5gt
+  " map <D-6> 6gt
+  " map <D-7> 7gt
+  " map <D-8> 8gt
+  " map <D-9> 9gt
 
   " Symfony Keys -- uses shell scripts I've set up.
     map ,scc :scc<CR>
@@ -175,8 +175,8 @@ match OverLength /\%81v.\+/
     map ,t :tabnew  
     map ,d :tabprev<CR> 
     map ,f :tabnext<CR>
-    map <D-]> :tabnext<CR>
-    map <D-[> :tabprev<CR>
+    map gt :tabnext<CR>
+    map gT :tabprev<CR>
 
   " Buffers!
     map ,bp :bprev!<CR>
