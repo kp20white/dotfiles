@@ -1,5 +1,5 @@
 # ls
-alias ls="ls --color -G"
+alias ls="ls --color"
 alias latr='ls -latr'
 alias lw='ls --width=1'
 alias ll='ls -alF'
@@ -14,7 +14,9 @@ alias vi='vim'
 # git
 alias gitd="git diff"
 alias gits="git status"
+alias gitb="git branch"
 alias gtfo="git fetch origin"
+alias gpo="git push origin"
 alias gmodev="git merge origin/develop"
 alias gmomstr="git merge origin/master"
 
@@ -56,3 +58,4 @@ alias mysqlstop='sudo service mysql stop'
 alias sagent='keychain ~/.ssh/id_rsa_iostudio; source ~/.keychain/kyle-OptiPlex-390-sh'
 alias kagent='keychain -k'
 
+alias ruby="ruby -rubygems"

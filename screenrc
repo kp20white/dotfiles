@@ -38,17 +38,12 @@ activity 'Something is up in window %t %n'
 screen -t local  0
 #screen -t <virtual_term_name> ssh <hostname>
 
-chdir $WEB_HOME/rsp
-screen -t rsp 
-chdir $WEB_HOME/campo
-screen -t campo
-screen -t campo
-screen -t campo
-screen -t campo
-chdir $WEB_HOME/snow
-screen -t snow 
-screen -t snow 
-chdir $HOME
+#chdir $WEB_HOME/campo
+#screen -t campo 
+#screen -t campo 
+#screen -t campo 
+#screen -t campo 
+#chdir $HOME
 
 #make things a little more secure.
 password
@@ -58,6 +53,7 @@ bind = resize =
 bind + resize +3
 bind - resize -3
 
+escape ``
 
 # Set the default terminal emulation to 'xterm'
 term rxvt
