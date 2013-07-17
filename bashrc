@@ -41,7 +41,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -59,7 +59,6 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -93,12 +92,20 @@ fi
 # if we have git completion, use a git-aware prompt
 if [ -f /usr/local/bin/git-completion.bash ]; then
   . /usr/local/bin/git-completion.bash
-  PS1='\w $(__git_ps1 "(%s) ")\$ '
+  PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+elif [ -f ~/.git-completion.sh ]; then
+  source ~/.git-completion.sh
+  if [ "$color_prompt" = yes ]; then
+    PS1='\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\W$(__git_ps1 " (%s)")]\$\[\033[00m\] '
   else
-    # use a super-minimal prompt by default
-    PS1='\w \$ '
+    PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+  fi
+else
+  # use a super-minimal prompt by default
+  PS1='\w \$ '
 fi
 
+unset color_prompt force_color_prompt
 
 # custom exports
 
